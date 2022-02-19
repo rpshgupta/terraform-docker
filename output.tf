@@ -1,3 +1,3 @@
-output "Ubuntu_Image_Id" {
-  value = docker_image.ubuntu.id
+output "postgres_container_id" {
+  value = docker_container.postgres_container.id
 }

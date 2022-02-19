@@ -7,6 +7,8 @@ terraform {
   }
 }
 
-provider "docker" {
-  host = "tcp://localhost:2375"
+
+resource "docker_image" "postgres" {
+  provider = docker
+  name = format("${var.ImageName}:${var.tag}")
 }

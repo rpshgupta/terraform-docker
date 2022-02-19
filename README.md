@@ -69,12 +69,14 @@ terraform plan --var-file ./env_configuration/terraform.tfvars
 ```
 9) Modules:
 
+- Modules variables can not be referenced from .tfvars file
+
 
 ---
 
 _Faced Error:_
 
-* 'Permission Denied (publickey)' error when I push!
+_1) 'Permission Denied (publickey)' error when I push!_
   * [Solution:](https://gist.github.com/adamjohnson/5682757) 
     * > This means, on your local machine, you haven't made any SSH keys. Not to worry. Here's how to fix: 
       > Open git bash (Use the Windows search. To find it, type "git bash") or the Mac Terminal. Pro Tip: You can use any *nix based command prompt (but not the default Windows Command Prompt!)
@@ -84,4 +86,15 @@ _Faced Error:_
       > Now, go and open id_rsa.pub in your favorite text editor (you can do this via Windows Explorer or the OSX Finder if you like, typing open . will open the folder). 
       > Copy the contents--exactly as it appears, with no extra spaces or lines--of id_rsa.pub and paste it into GitHub and/or BitBucket under the Account Settings > SSH Keys. NOTE: I like to give the SSH key a descriptive name, usually with the name of the workstation I'm on along with the date. 
       > Now that you've added your public key to Github and/or BitBucket, try to git push again and see if it works. It should!
-* 
+
+_2) Module not found :_
+  ![img.png](img.png)
+   * Solution:
+     * ` terraform get -update ` has fixed the error of adding module.
+     * ![img_1.png](img_1.png)
+
+_3) Missing required provider :_
+![img_2.png](img_2.png)
+   * Solution:
+     * As A module was included which is fetching the image from docker registry so It needed provider details.
+     * Check image.tf within modules/pull_image.
