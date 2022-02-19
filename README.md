@@ -9,7 +9,7 @@ https://registry.terraform.io/providers/kreuzwerker/docker/latest/docs
 
 ----
 
-_Pre-requisities :_
+_Pre-requisites :_
 - Docker should be Installed. 
 - Terraform .exe file path is present in system env variables.
 - IDE(IntellJ Community Version) with Terrform plugin.
@@ -17,7 +17,7 @@ _Pre-requisities :_
 ---
 
 _Learnings :_
-1) You need to specify a provider either in main.tf OR _provider.tf so that tf can download the neccessary binaries in the root folder(present directory).
+1) You need to specify a provider either in main.tf OR _provider.tf so that tf can download the necessary binaries in the root folder(present directory).
    You can refer to this [link](https://registry.terraform.io/browse/providers) for other providers.
    _provider.tf will look like below:
 
