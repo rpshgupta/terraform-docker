@@ -1,1 +1,3 @@
-ImageName = "ubuntu:latest"
+ImageName = "ubuntu"
+env = "dev"
+tag = "latest"

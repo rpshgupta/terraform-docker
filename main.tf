@@ -1,13 +1,9 @@
-#provider "docker" {
-#  host = "tcp://localhost:2375"
-#}
-
 resource "docker_image" "ubuntu" {
-  name = var.ImageName
+#  name = format("%s:%s", var.ImageName, var.tag) #correct
+  name = format("${var.ImageName}:${var.tag}")
   #  name = "ubuntu:latest"
+  #  tags = {
+  #    env = var.env
+  #    name = format("%s-%s", var.ImageName ,var.env)
+  #  } this will not work.
 }
-
-#resource "docker_container" "createdUsingTFUbuntu" {
-#  image = docker_image.ubuntu.latest
-#  name  = "createdUsingTFUbuntu"
-#}
