@@ -98,3 +98,6 @@ _3) Missing required provider :_
    * Solution:
      * As A module was included which is fetching the image from docker registry so It needed provider details.
      * Check image.tf within modules/pull_image.
+
+---
+
